@@ -39,21 +39,21 @@ IntelliJ IDEA 2020.3.1 x64
 ## 图片演示
 登录页面
 
-![Image text](https://github.com/bruce/miaosha_idea/blob/master/showimgs/login.png)
+![Image text](https://github.com/bruce/seckill/blob/master/showimgs/login.png)
 
 商品列表页面
 
-![Image text](https://github.com/bruce/miaosha_idea/blob/master/showimgs/list.png)
+![Image text](https://github.com/bruce/seckill/blob/master/showimgs/list.png)
 
 商品详情页面
 
-![Image text](https://github.com/bruce/miaosha_idea/blob/master/showimgs/goodsdetail.png)
+![Image text](https://github.com/bruce/seckill/blob/master/showimgs/goodsdetail.png)
 
 商品秒杀倒计时
 
-![Image text](https://github.com/bruce/miaosha_idea/blob/master/showimgs/wait.png)
+![Image text](https://github.com/bruce/seckill/blob/master/showimgs/wait.png)
 
 成功秒杀页面
 
-![Image text](https://github.com/bruce/miaosha_idea/blob/master/showimgs/miaoshasuccess.png)
+![Image text](https://github.com/bruce/seckill/blob/master/showimgs/miaoshasuccess.png)
 
