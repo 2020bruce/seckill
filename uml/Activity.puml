@@ -1,0 +1,19 @@
+@startuml
+|用户|
+start
+:登录/注册;
+if (登录成功?) then (yes)
+    :查看商品列表;
+    :查看秒杀商品列表;
+    if (选择秒杀商品?) then (yes)
+        :创建秒杀订单;
+    else (no)
+        :创建普通订单;
+    endif
+    :查看订单列表;
+    :查看秒杀订单列表;
+else (no)
+    :提示登录失败;
+endif
+stop
+@enduml

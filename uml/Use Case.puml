@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam packageStyle rect
+
+actor 用户
+actor 管理员
+
+rectangle 商城系统 {
+  usecase 登录
+  usecase 注册
+  usecase 查看商品
+  usecase 添加商品
+  usecase 修改商品
+  usecase 删除商品
+  usecase 秒杀商品
+  用户 --> 登录
+  用户 --> 注册
+  用户 --> 查看商品
+  用户 --> 秒杀商品
+  管理员 --> 添加商品
+  管理员 --> 修改商品
+  管理员 --> 删除商品
+}
+
+@enduml

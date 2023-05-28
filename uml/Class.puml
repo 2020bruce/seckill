@@ -1,0 +1,98 @@
+@startuml
+package 商城系统 {
+  package 商品 {
+    class Goods {
+      -id: int
+      -name: string
+      -price: double
+      -stock: int
+      +getId(): int
+      +getName(): string
+      +getPrice(): double
+      +getStock(): int
+      +setStock(stock: int): void
+    }
+    class SeckillGoods {
+      -id: int
+      -goods: Goods
+      -seckillPrice: double
+      -seckillStock: int
+      +getId(): int
+      +getGoods(): Goods
+      +getSeckillPrice(): double
+      +getSeckillStock(): int
+      +setSeckillStock(seckillStock: int): void
+    }
+  }
+
+  package 订单 {
+    class Order {
+      -id: int
+      -user: User
+      -goods: Goods
+      -status: int
+      -createTime: Date
+      +getId(): int
+      +getUser(): User
+      +getGoods(): Goods
+      +getStatus(): int
+      +setStatus(status: int): void
+      +getCreateTime(): Date
+    }
+    class SeckillOrder {
+      -id: int
+      -user: User
+      -goods: SeckillGoods
+      -status: int
+      -createTime: Date
+      +getId(): int
+      +getUser(): User
+      +getGoods(): SeckillGoods
+      +getStatus(): int
+      +setStatus(status: int): void
+      +getCreateTime(): Date
+    }
+    class OrderInfo {
+      -id: int
+      -user: User
+      -goods: Goods
+      -order: Order
+      +getId(): int
+      +getUser(): User
+      +getGoods(): Goods
+      +getOrder(): Order
+    }
+  }
+
+  package 用户 {
+    class User {
+      -id: int
+      -username: string
+      -password: string
+      +getId(): int
+      +getUsername(): string
+      +setUsername(username: string): void
+      +getPassword(): string
+      +setPassword(password: string): void
+    }
+  }
+
+  class 商城系统控制器 {
+    +login(username: string, password: string): boolean
+    +register(username: string, password: string): boolean
+    +getGoodsList(): List<Goods>
+    +getSeckillGoodsList(): List<SeckillGoods>
+    +addGoods(goods: Goods): boolean
+    +updateGoods(goods: Goods): boolean
+    +deleteGoods(goods: Goods): boolean
+    +createOrder(user: User, goods: Goods): boolean
+    +createSeckillOrder(user:User, seckillGoods: SeckillGoods): boolean
+    +getOrderList(user: User): List<Order>
+    +getSeckillOrderList(user: User): List<SeckillOrder>
+  }
+}
+
+商城系统控制器 --> 商品
+商城系统控制器 --> 订单
+商城系统控制器 --> 用户
+@enduml
