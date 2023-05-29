@@ -13,6 +13,24 @@
 	 -->
 	<link type="text/css" rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}"/>
 	<script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#submit").on("click", function () {
+				var question = $("#question").val();
+				$.ajax({
+					url: "/ask",
+					data:{
+						"question": question
+					},
+					type: "post",
+					dataType: "json",
+					success: function (resp) {
+						$("#answer").val(resp.ans)
+					}
+				})
+			})
+		})
+	</script>
 
 </head>
 <body>
@@ -31,6 +49,12 @@
 			<td><a th:href="'/goods_detail.htm?goodsId='+${goods.id}">详情</a></td>
 		</tr>
 		</table>
+	</div>
+	<div>
+		<input id="question" type="text" name="question"/>
+		<button id="submit" name="submit">提交问题</button>
+		<br/>
+		<textarea id="answer" type="text" name="answer" style="width: 800px;height: 100px" wrap="soft"/>
 	</div>
 </body>
 </html>
